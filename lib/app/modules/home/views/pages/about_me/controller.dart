@@ -73,7 +73,7 @@ class Controller extends GetxController {
         widthFileList.removeAt(index);
         openedFileList.value = val;
         if (val.isNotEmpty) {
-          selectedFile.value = openedFileList.value[0];
+          selectedFile.value = openedFileList.value[(index-1).clamp(0, index)];
           scrollToPoint(0);
         } else {
           selectedFile("");

@@ -1,13 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get/get.dart';
-import 'package:portfolio/app/components/pages/about_me/controller.dart';
 import 'package:portfolio/app/components/widgets/editor.dart';
-import 'package:portfolio/app/modules/home/controllers/home_controller.dart';
+import 'package:portfolio/app/modules/home/views/pages/about_me/controller.dart';
 import 'package:portfolio/app/values/color.dart';
 import 'package:portfolio/app/values/text_style.dart';
+import 'package:portfolio/app/values/utility.dart';
 
-import '../../../values/utility.dart';
 
 class AboutMe extends StatefulWidget {
   const AboutMe({super.key});
@@ -304,6 +303,7 @@ class _AboutMeState extends State<AboutMe> {
           onTap: controller.folderExpansionStatus[title]?.toggle,
           child: Container(
             padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 8),
+            color: Colors.transparent,
             child: Row(
               children: [
                 AnimatedRotation(
@@ -456,36 +456,38 @@ class _AboutMeState extends State<AboutMe> {
             },
           ),
         ),
-        Row(
-          children: [
-            Container(
-              width: 36,
-              decoration: BoxDecoration(
-                gradient: LinearGradient(
-                  colors: [
-                    mainBgColor.withOpacity(0.8),
-                    mainBgColor.withOpacity(0),
-                  ],
-                  begin: Alignment.centerLeft,
-                  end: Alignment.centerRight,
+        IgnorePointer(
+          child: Row(
+            children: [
+              Container(
+                width: 36,
+                decoration: BoxDecoration(
+                  gradient: LinearGradient(
+                    colors: [
+                      mainBgColor.withOpacity(0.8),
+                      mainBgColor.withOpacity(0),
+                    ],
+                    begin: Alignment.centerLeft,
+                    end: Alignment.centerRight,
+                  ),
                 ),
               ),
-            ),
-            const Spacer(),
-            Container(
-              width: 36,
-              decoration: BoxDecoration(
-                gradient: LinearGradient(
-                  colors: [
-                    mainBgColor.withOpacity(0.8),
-                    mainBgColor.withOpacity(0),
-                  ],
-                  end: Alignment.centerLeft,
-                  begin: Alignment.centerRight,
+              const Spacer(),
+              Container(
+                width: 36,
+                decoration: BoxDecoration(
+                  gradient: LinearGradient(
+                    colors: [
+                      mainBgColor.withOpacity(0.8),
+                      mainBgColor.withOpacity(0),
+                    ],
+                    end: Alignment.centerLeft,
+                    begin: Alignment.centerRight,
+                  ),
                 ),
               ),
-            ),
-          ],
+            ],
+          ),
         )
       ],
     );

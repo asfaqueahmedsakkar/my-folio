@@ -19,9 +19,7 @@ class HomeController extends GetxController {
     textPent.layout(maxWidth: width);
 
     int lineCount = textPent.height ~/ textPent.preferredLineHeight;
-    int newLineCount = text.allMatches('''
-    ''').length;
-    return lineCount + newLineCount;
+    return lineCount;
   }
 
   double getTextWidth(String text, TextStyle textStyle) {

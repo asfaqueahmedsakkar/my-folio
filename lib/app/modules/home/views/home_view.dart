@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
-import 'package:portfolio/app/components/pages/about_me/about_me.dart';
-import 'package:portfolio/app/components/pages/hello_page.dart';
 import 'package:portfolio/app/components/widgets/footer.dart';
 import 'package:portfolio/app/components/widgets/header.dart';
+import 'package:portfolio/app/modules/home/views/pages/about_me/about_me.dart';
+import 'package:portfolio/app/modules/home/views/pages/hello_page.dart';
 import 'package:portfolio/app/values/color.dart';
 
 import '../controllers/home_controller.dart';
