@@ -6,6 +6,7 @@ import 'package:portfolio/app/modules/home/views/pages/about_me/controller.dart'
 import 'package:portfolio/app/values/color.dart';
 import 'package:portfolio/app/values/text_style.dart';
 import 'package:portfolio/app/values/utility.dart';
+import 'package:share_plus/share_plus.dart';
 
 
 class AboutMe extends StatefulWidget {
@@ -56,12 +57,16 @@ class _AboutMeState extends State<AboutMe> {
                         ),
                       ),
                       const Spacer(),
-                      Container(
-                        padding: const EdgeInsets.all(10),
-                        child: Icon(
-                          FontAwesomeIcons.shareNodes,
-                          color: disableHeaderTitleColor,
-                          size: 18,
+                      GestureDetector(
+                        onTap: ()=>Share.share("https://asfaqueahmedsakkar.com"),
+                        child: Container(
+                          color: Colors.transparent,
+                          padding: const EdgeInsets.all(10),
+                          child: Icon(
+                            FontAwesomeIcons.shareNodes,
+                            color: disableHeaderTitleColor,
+                            size: 18,
+                          ),
                         ),
                       ),
                       const SizedBox(height: 8),

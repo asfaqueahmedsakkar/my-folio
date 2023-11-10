@@ -14,6 +14,9 @@ dependencies:
   url_launcher:
   code_text_field:
   flutter_highlight:
+  share_plus: any
+  url_strategy: any
+  universal_html: any
   flutter:
     sdk: flutter
 

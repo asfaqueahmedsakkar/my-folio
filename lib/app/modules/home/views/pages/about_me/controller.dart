@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
 import 'package:portfolio/app/modules/home/controllers/home_controller.dart';
+import 'package:portfolio/app/utility/route_manager.dart';
 import 'package:portfolio/app/values/text_style.dart';
 
 class Controller extends GetxController {
@@ -35,26 +36,29 @@ class Controller extends GetxController {
 
   openFile(String title) {
     selectedFile.value = title;
-    if (!openedFileList.value.contains(title)) {
-      var value =
-          _getWidth(title) + (widthFileList.isEmpty ? 0 : widthFileList.last);
-      widthFileList.add(value);
-      openedFileList.update((val) {
-        val!.add(title);
-        openedFileList.value = val;
+    if(title.isNotEmpty){
+      if (!openedFileList.value.contains(title)) {
+        var value =
+            _getWidth(title) + (widthFileList.isEmpty ? 0 : widthFileList.last);
+        widthFileList.add(value);
+        openedFileList.update((val) {
+          val!.add(title);
+          openedFileList.value = val;
+        });
+      }
+      Future.delayed(const Duration(milliseconds: 300), () {
+        int index = openedFileList.value.indexOf(title);
+        var scrollTo = 0.0;
+        if (index != 0) {
+          scrollTo = widthFileList[index - 1];
+          if (scrollTo > scrollController.position.maxScrollExtent) {
+            scrollTo = scrollController.position.maxScrollExtent;
+          }
+        }
+        scrollToPoint(scrollTo);
       });
     }
-    Future.delayed(const Duration(milliseconds: 300), () {
-      int index = openedFileList.value.indexOf(title);
-      var scrollTo = 0.0;
-      if (index != 0) {
-        scrollTo = widthFileList[index - 1];
-        if (scrollTo > scrollController.position.maxScrollExtent) {
-          scrollTo = scrollController.position.maxScrollExtent;
-        }
-      }
-      scrollToPoint(scrollTo);
-    });
+    RouteManager.replaceRoute(title);
   }
 
   double _getWidth(String s) {
@@ -67,16 +71,16 @@ class Controller extends GetxController {
 
   remove(String title) {
     if (openedFileList.value.contains(title)) {
+      double currentScroll = scrollController.offset;
       int index = openedFileList.value.indexOf(title);
       openedFileList.update((val) {
         val!.removeAt(index);
         widthFileList.removeAt(index);
         openedFileList.value = val;
         if (val.isNotEmpty) {
-          selectedFile.value = openedFileList.value[(index-1).clamp(0, index)];
-          scrollToPoint(0);
+          openFile(openedFileList.value[(index - 1).clamp(0, index)]);
         } else {
-          selectedFile("");
+          openFile("");
         }
       });
     }

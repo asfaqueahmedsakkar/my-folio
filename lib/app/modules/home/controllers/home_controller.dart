@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:portfolio/app/modules/home/views/pages/about_me/controller.dart';
+import 'package:portfolio/app/utility/route_manager.dart';
 
 class HomeController extends GetxController {
   RxString selectedHeaderBar = "_hello".obs;
@@ -31,5 +33,16 @@ class HomeController extends GetxController {
     textPent.layout(
         minWidth: (textStyle.fontSize ?? 14) * (textStyle.height ?? 1.5));
     return textPent.width;
+  }
+
+  changeSelectedHeader(String title) {
+    selectedHeaderBar(title);
+    if (title == "_home") {
+      title = "";
+    } else if (title.contains("_about")) {
+      title = "about-me/${Get.isRegistered<Controller>()?Get.find<Controller>().selectedFile.value:'bio'}";
+    }
+    RouteManager.pushRouteToRoot(
+        (title[0] == "_" ? title.substring(1) : title).replaceAll("_", "-"));
   }
 }

@@ -61,7 +61,7 @@ class Header extends GetView<HomeController> {
     );
 
     return GestureDetector(
-      onTap: !selectable ? null : () => controller.selectedHeaderBar(title),
+      onTap: !selectable ? null : () => controller.changeSelectedHeader(title),
       child: Container(
         width: width,
         padding: const EdgeInsets.symmetric(horizontal: 32),

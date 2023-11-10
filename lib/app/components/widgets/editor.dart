@@ -6,8 +6,6 @@ import 'package:flutter_highlight/themes/vs.dart';
 import 'package:flutter_highlight/themes/vs2015.dart';
 import 'package:get/get.dart';
 import 'package:portfolio/app/data/data.dart';
-import 'package:portfolio/app/modules/home/controllers/home_controller.dart';
-import 'package:portfolio/app/values/text_style.dart';
 import 'package:highlight/languages/dart.dart';
 
 class Editor extends StatefulWidget {
