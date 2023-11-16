@@ -181,7 +181,8 @@ Map<String, dynamic> data = {
         String proficiency ="Moderate";
         
   }''',
-  "interest":'''// I am keen on immersing myself in the latest technological advancements,
+  "interest":
+      '''// I am keen on immersing myself in the latest technological advancements,
 // constantly striving to enhance my expertise in this ever-evolving domain. 
 // Novels have a special place in my heart, as I find great joy in delving
 // into their narratives. 
@@ -189,3 +190,54 @@ Map<String, dynamic> data = {
 // Sports and films are my sources of entertainment and inspiration, 
 // as I take pleasure in both watching and engaging in these activities.''',
 };
+
+List<Map<String, dynamic>> projects = [
+  {
+    "name": "Surokkha",
+    "image": "surokkha",
+    "details":
+        "Surokkha is providing the facility to register for vaccination for the people of Bangladesh. This application was developed to provide all the services from single place.",
+  },
+  {
+    "name": "Simply Eloped:Vendor",
+    "image": "simplyeloped",
+    "details":
+        "Simply Eloped is the leading elopement company in USA.\nThis application to help Simply Eloped vendors to manege their daily elopements.",
+  },
+  {
+    "name": "Surokkha Distribution",
+    "image": "surokkha",
+    "details":
+        "Surokkha Distribution app is for Vaccinator to verify the person's information, track the vaccination state and record vaccination status.",
+  },
+  {
+    "name": "HelloHRM",
+    "image": "hellohrm",
+    "details":
+        "Hellohrm is a cloud-based HR software providing a simple experience to employees. It helps you accommodate quickly to the changes and make your HR process robust and effective. Build a high-performance team with our elegant features.",
+  },
+  {
+    "name": "Gym City",
+    "image": "gymcity",
+    "details":
+        "GymCity helps the gym owners manage their daily gym activities. It also let them connect to their gym members and track daily workouts, body measurement, invoicing etc. Users can use it for perfornal fitness tracking too.",
+  },
+  {
+    "name": "e-ONIGIRI英単語",
+    "image": "onigiri",
+    "details":
+        'An English vocabulary app provided by Iizuna Bookstore, which has sold over 1.8 million copies of "English Grammar and Grammar Reference Book Vintage".',
+  },
+  {
+    "name": "Tutor fleet",
+    "image": "tutorfleet",
+    "details":
+        "TutorFleet is a tuition management mobile Application where tutors can manage students in an easy and efficient way. Here Tutor can create students’ profiles and can Schedule/Re-Schedule time/dates and can trace payment history as well.",
+  },
+  {
+    "name": "Game Changer",
+    "image": "gamechanger",
+    "details":
+        "Game Changer is the oldest fantasy sports platform in Bangladesh where users can showcase their sports knowledge to create their own fantasy sports team of real-life players from upcoming matches and score points based on their on-field performance, and compete with other fans to be a winner in every match. Users can also showcase their gaming skill by competing against others on various casual games.",
+  },
+];

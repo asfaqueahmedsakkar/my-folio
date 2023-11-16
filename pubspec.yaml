@@ -1,7 +1,7 @@
 name: portfolio
 version: 1.0.0+1
-publish_to: none
-description: A new Flutter project.
+publish_to: firebase.com
+description: Hello there, this is Asfaque. This is my portfolio with my work experience and skills. This site is made with flutter, a cross platform application development framework.
 environment: 
   sdk: '>=3.0.6 <4.0.0'
 
@@ -27,4 +27,8 @@ dev_dependencies:
 
 flutter: 
   uses-material-design: true
+
+  assets:
+    - assets/
+    - assets/apps/
 

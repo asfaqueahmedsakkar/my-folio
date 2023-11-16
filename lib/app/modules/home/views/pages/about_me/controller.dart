@@ -11,8 +11,8 @@ class Controller extends GetxController {
 
   Map<String, RxBool> folderExpansionStatus = {
     "bio": true.obs,
-    "education": false.obs,
-    "experience": false.obs,
+    "education": true.obs,
+    "experience": true.obs,
     "expertise": false.obs,
     "interest": false.obs,
   };

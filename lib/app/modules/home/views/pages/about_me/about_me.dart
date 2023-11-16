@@ -83,7 +83,7 @@ class _AboutMeState extends State<AboutMe> {
                 ),
               ),
               Expanded(
-                  child: Column(
+                  child: ListView(
                 children: [
                   Obx(
                     () => GestureDetector(
