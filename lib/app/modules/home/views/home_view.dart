@@ -17,39 +17,33 @@ class HomeView extends GetView<HomeController> {
     return Scaffold(
       backgroundColor: bgColor,
       body: Center(
-        child: SingleChildScrollView(
-          child: SingleChildScrollView(
-            scrollDirection: Axis.horizontal,
+        child: Container(
+          constraints: const BoxConstraints(
+            maxHeight: 900,
+            maxWidth: 1500,
+          ),
+          color: Colors.transparent,
+          child: Center(
             child: Container(
-              constraints: const BoxConstraints(
-                minWidth: 1300,
-                minHeight: 732,
-                maxHeight: 850,
-                maxWidth: 1500,
+              decoration: BoxDecoration(
+                color: mainBgColor,
+                borderRadius: BorderRadius.circular(8),
+                border: Border.all(color: borderColor, width: 1),
               ),
-              child: Center(
-                child: Container(
-                  decoration: BoxDecoration(
-                    color: mainBgColor,
-                    borderRadius: BorderRadius.circular(8),
-                    border: Border.all(color: borderColor, width: 1),
+              child: Column(
+                children: [
+                  const Header(),
+                  Expanded(
+                    child: Obx(
+                      () => controller.selectedHeaderBar.value == "_hello"
+                          ? const Hello()
+                          : controller.selectedHeaderBar.value == "_about-me"
+                              ? const AboutMe()
+                              : PortfolioView(),
+                    ),
                   ),
-                  child: Column(
-                    children: [
-                      const Header(),
-                      Expanded(
-                        child: Obx(
-                          () => controller.selectedHeaderBar.value == "_hello"
-                              ? const Hello()
-                              : controller.selectedHeaderBar.value == "_about-me"
-                                  ? const AboutMe()
-                                  : PortfolioView(),
-                        ),
-                      ),
-                      const Footer(),
-                    ],
-                  ),
-                ),
+                  const Footer(),
+                ],
               ),
             ),
           ),

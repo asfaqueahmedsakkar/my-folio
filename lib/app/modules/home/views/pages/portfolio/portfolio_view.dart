@@ -12,8 +12,8 @@ class PortfolioView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GridView(
-      gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-        crossAxisCount: 3,
+      gridDelegate: const SliverGridDelegateWithMaxCrossAxisExtent(
+        maxCrossAxisExtent: 400,
         mainAxisSpacing: 16,
         crossAxisSpacing: 16,
         childAspectRatio: 1.66,
@@ -25,9 +25,9 @@ class PortfolioView extends StatelessWidget {
                 child: ClipRect(
                   child: Row(
                     children: [
-                      SizedBox(
-                        width: 140,
-                        child: Center(
+                      Center(
+                        child: Transform.translate(
+                          offset: const Offset(-40, 40),
                           child: Transform.rotate(
                             angle: 0.2,
                             child: Stack(
@@ -45,6 +45,7 @@ class PortfolioView extends StatelessWidget {
                                   "assets/frame.png",
                                   width: 120,
                                   height: 250,
+                                  fit: BoxFit.fill,
                                 ),
                               ],
                             ),

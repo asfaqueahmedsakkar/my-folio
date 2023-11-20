@@ -17,6 +17,7 @@ dependencies:
   share_plus: any
   url_strategy: any
   universal_html: any
+  responsive_builder: any
   flutter:
     sdk: flutter
 
